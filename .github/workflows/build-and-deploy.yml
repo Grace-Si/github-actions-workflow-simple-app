@@ -69,6 +69,12 @@ jobs:
 
       - name: Check Az CLI version
         run: az --version
+        
+      - name: Debug Azure Credentials
+        run: |
+          echo "Client ID: ${{ secrets.AZURE_CLIENT_ID }}"
+          echo "Tenant ID: ${{ secrets.AZURE_TENANT_ID }}"
+          echo "Subscription ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}"
 
       # Logs in with your Azure credentials
       - name: Azure login
